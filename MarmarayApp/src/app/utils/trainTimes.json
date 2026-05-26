@@ -1,6 +1,6 @@
 {
   "stations": {
-    "Halkalı0": {
+    "Halkalı": {
       "halkali": [],
       "gebze": [
         { "departure": "05:58", "destination": "Gebze", "weekendOnly": false },
