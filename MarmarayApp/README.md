@@ -1,56 +1,91 @@
-# Welcome to your Expo app 👋
+# 🚆 MarmarayApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Marmaray İstanbul'un metro sefer saatlerini gerçek zamanlı olarak gösteren mobil uygulamadır.
 
-## Get started
+## 📱 Özellikler
 
-1. Install dependencies
+- **Canlı Sefer Saatleri**: Seçtiğiniz istasyondan kalkacak olan trenlerin saatlerini görüntüleyin
+- **İki Yön Desteği**: Halkalı ve Gebze yönlerine ait seferleri ayrı ayrı görebilirsiniz
+- **Geri Sayım**: Bir sonraki trenin kaç dakika sonra kalkacağını gerçek zamanlı olarak takip edin
+- **Hafta Sonu Tarifesi**: Hafta sonu geçerli olan özel seferleri işaretleme
+- **İstasyon Seçimi**: Kolayca istasyon değiştirin ve farklı durakları takip edin
+- **Karanlık Tema**: Göz dostu modern tasarım
 
+## 🚀 Nasıl Başlanır
+
+1. **Uygulamayı Başlatın**:
    ```bash
-   npm install
+   npm start
    ```
 
-2. Start the app
+2. **Platform Seçin**:
+   - **iOS**: Terminalden `i` yazın veya `npm run ios` komutu kullanın
+   - **Android**: Terminalden `a` yazın veya `npm run android` komutu kullanın
+   - **Web**: Terminalden `w` yazın veya `npm run web` komutu kullanın
 
-   ```bash
-   npx expo start
-   ```
+## 📖 Kullanıcı Rehberi
 
-In the output, you'll find options to open the app in a
+### 1. İstasyon Seçimi
+- Uygulamayı açtığınızda "İstasyon Seçin" yazısını görürsünüz
+- Başlıktaki istasyon simgesine veya adına dokunarak istasyon seçim ekranını açabilirsiniz
+- Listeden istasyonunuzu seçip kaydetmek için istasyon adına dokunun
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### 2. Sefer Saatlerini Görüntüleme
+- Seçtiğiniz istasyondaki tüm seferleri iki yönde görebilirsiniz:
+  - **Halkalı Yönü**: Kırmızı-turuncu renkte
+  - **Gebze Yönü**: Altın-sarı renkte
+- Her sefer kartında şu bilgiler bulunur:
+  - Varış noktası (Destination)
+  - Sefer kalkış saati
+  - Sonraki kalış saatine kaç dakika kaldığı
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 3. İşaretler
+- 🕖 **CANLI**: Uygulamanın canlı olduğunu gösterir
+- **H/S**: Yalnızca hafta sonu (cumartesi-pazar) geçerli seferdir
+- **Yeşil Badge**: Sefer 2 dakikadan daha kısa sürede kalkacaktır
 
-## Get a fresh project
+### 4. Saati Kontrol Edin
+- Başlığın sağ üst köşesinde canlı saat gösterilir
+- Uygulamanın doğru saati gösterdiğinden emin olun
 
-When you're ready, run:
+## 📝 Sefer Saatleri Nasıl Güncellenir
 
-```bash
-npm run reset-project
+Sefer saatleri `src/app/utils/trainTimes.json` dosyasında saklanır. Yeni istasyonlar eklemek veya seferleri güncellemek için bu dosyayı düzenleyin.
+
+**JSON Formatı**:
+```json
+{
+  "stations": {
+    "İstasyonAdı": {
+      "halkali": [
+        { "departure": "06:30", "destination": "Hedef", "weekendOnly": false }
+      ],
+      "gebze": [
+        { "departure": "06:45", "destination": "Hedef", "weekendOnly": false }
+      ]
+    }
+  }
+}
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🛠️ Teknik Bilgiler
 
-### Other setup steps
+- **Framework**: React Native / Expo
+- **Dil**: TypeScript
+- **Navigasyon**: Expo Router
+- **Tasarım**: React Native StyleSheet
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+## 📦 Gereksinimler
 
-## Learn more
+- Node.js 16+
+- npm veya yarn
+- Expo CLI (opsiyonel)
 
-To learn more about developing your project with Expo, look at the following resources:
+## 🤝 Geri Bildirim
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Uygulama hakkında geri bildirim ve önerileriniz için lütfen proje sahibi ile iletişime geçin.
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+**Sürüm**: 1.0.1  
+**Son Güncelleme**: 2026
